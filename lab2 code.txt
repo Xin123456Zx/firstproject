@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+/* Author Name: Xin Zhao
+The nature of the problem is to decrypts the two hex digits into an ASCII character.
+The solution is to use cipher key to decrypt the the two hex digits into an ASCII character.
+*/
+int main(void)
+{
+	
+	int cipherKey;
+	int encodedText;
+
+	printf("enter 4 bit key: \n");
+	cipherKey = (getchar() - 48) * 8 + (getchar() - 48) * 4 + (getchar() - 48) * 2 + getchar() - 48;
+	cipherKey = cipherKey | cipherKey * 16;
+	printf("enter encoded text: \n");
+	scanf_s("%2x", &encodedText);
+
+	while ((getchar())!='\n')
+	{
+		putchar(cipherKey ^ encodedText);
+		scanf_s("%2x", &encodedText);
+	}
+
+}
+
+
