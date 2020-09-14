@@ -11,6 +11,7 @@ int main(void)
 	
 	int cipherKey;
 	int encodedText;
+	int s=5;
 
 	printf("enter 4 bit key: \n");
 	cipherKey = (getchar() - 48) * 8 + (getchar() - 48) * 4 + (getchar() - 48) * 2 + getchar() - 48;
